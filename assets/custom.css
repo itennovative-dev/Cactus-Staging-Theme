@@ -18,3 +18,7 @@
 
 /* ponytail: cactus card v3 - info flush to bottom */
 .product-card__info{bottom:0!important;padding-bottom:74px}
+
+/* ponytail: cactus card v4 - actions always visible, no info padding-bottom */
+@media (min-width:768px){.product-card:not(.product-card--list) .product-card__actions .btn{opacity:1}}
+.product-card__info{padding-bottom:0!important}
