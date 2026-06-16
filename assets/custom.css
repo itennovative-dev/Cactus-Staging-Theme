@@ -25,3 +25,6 @@
 
 /* ponytail: cactus card v5 - ATC button below image (normal flow) */
 .product-card__static-actions{position:static!important;inset:auto!important;left:auto!important;right:auto!important;bottom:auto!important;padding:14px 0 0!important;margin-top:0!important;width:100%}
+
+/* ponytail: cactus card v6 - info below image too (no overlay, no overlap) */
+.product-card__info{position:static!important;inset:auto!important;bottom:auto!important;padding:14px 0 0!important}
