@@ -1,0 +1,24 @@
+<!-- Add the "notranslate" class for editable languages -->
+{% assign editable_locales = "en,fr,de,es" | split: "," %}
+{% if editable_locales contains request.locale.iso_code %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const selectors = [".product-card__title.text-pcard-title"];
+      selectors.forEach(selector => addNotranslate(selector));
+    });
+
+    function addNotranslate(selector) {
+      let attempts = 0;
+      const maxAttempts = 5;
+      const interval = setInterval(() => {
+        const elements = document.querySelectorAll(selector);
+        if (elements.length > 0) {
+          elements.forEach(e => e.classList.add("notranslate"));
+          clearInterval(interval);
+        } else if (++attempts >= maxAttempts) {
+          clearInterval(interval);
+        }
+      }, 500);
+    }
+  </script>
+{% endif %}

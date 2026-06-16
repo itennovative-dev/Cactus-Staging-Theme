@@ -1,0 +1,479 @@
+{%- liquid
+  assign gap = section.settings.gap
+  assign border_radius = section.settings.border_radius
+-%}
+
+<style>
+
+
+  #shopify-section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+        background-color: #f9f8f2;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .grid-cards-overlay {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ gap }}px;
+    
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ border_radius }}px;
+    aspect-ratio: {{ section.settings.aspect_ratio }};
+    height:359px;
+        width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__item:hover .grid-card-overlay__image {
+    transform: scale(1.04);
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__placeholder {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__placeholder .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 30%,
+      rgba(0, 0, 0, calc(var(--overlay-opacity, 0.55))) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    z-index: 2;
+    color: #ffffff;
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__title {
+      font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0%;
+    line-height: 1.2;
+    margin: 0 0 6px 0;
+    color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__description {
+    font-size: 20px;
+    max-width: 489px;
+    font-weight: 300;
+    line-height: 1.3;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  #shopify-section-{{ section.id }} .grid-card-overlay__link {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: block;
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .grid-cards-overlay {
+      grid-template-columns: 1fr;
+      gap: {{ section.settings.gap_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .grid-card-overlay__item {
+      aspect-ratio: {{ section.settings.aspect_ratio_mobile }};
+    }
+
+    #shopify-section-{{ section.id }} .grid-card-overlay__title {
+      font-size: {{ section.settings.title_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .grid-card-overlay__description {
+      font-size: {{ section.settings.description_size_mobile }}px;
+    }
+  }
+</style>
+
+<div class="grid-overlay-section section--padding">
+  <div class="{% if section.settings.container == 'full' %}w-full{% else %}page-width{% endif %}">
+
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="section-header text-{{ section.settings.heading_alignment }} mb-8">
+        {%- if section.settings.subheading != blank -%}
+          <motion-element data-motion="fade-up" class="block text-subheading">
+            {{ section.settings.subheading }}
+          </motion-element>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <motion-element data-motion="fade-up" data-motion-delay="50" class="block">
+            <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+          </motion-element>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="grid-cards-overlay">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'card' -%}
+          <motion-element
+            data-motion="fade-up"
+            data-motion-delay="{{ forloop.index0 | times: 75 }}"
+            class="grid-card-overlay__item"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.image != blank -%}
+              {%- capture sizes -%}
+                (max-width: 767px) 100vw,
+                {% if section.settings.container == 'full' %}50vw{% else %}min({{ settings.page_width | divided_by: 2 }}px, 50vw){% endif %}
+              {%- endcapture -%}
+              {{
+                block.settings.image
+                | image_url: width: block.settings.image.width
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: sizes,
+                  widths: '400,600,800,1000,1200,1400,1600',
+                  class: 'grid-card-overlay__image',
+                  is: 'image-lazy',
+                  alt: block.settings.title
+              }}
+            {%- else -%}
+              <div class="grid-card-overlay__placeholder">
+                {{- 'lifestyle-' | append: forloop.index | placeholder_svg_tag: 'placeholder-svg' -}}
+              </div>
+            {%- endif -%}
+
+            <div
+              class="grid-card-overlay__gradient"
+              style="--overlay-opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};"
+            ></div>
+
+            <div class="grid-card-overlay__content">
+              {%- if block.settings.title != blank -%}
+                <p class="grid-card-overlay__title">{{ block.settings.title }}</p>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <p class="grid-card-overlay__description">{{ block.settings.description }}</p>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.link != blank -%}
+              <a
+                href="{{ block.settings.link }}"
+                class="grid-card-overlay__link"
+                aria-label="{{ block.settings.title }}"
+              ></a>
+            {%- endif -%}
+
+          </motion-element>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Immagini Academy",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Generale"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.all.container.label",
+      "options": [
+        { "value": "full", "label": "t:sections.all.container.options__full.label" },
+        { "value": "fixed", "label": "t:sections.all.container.options__fixed.label" }
+      ],
+      "default": "fixed"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Proporzioni card (desktop)",
+      "options": [
+        { "value": "16/9", "label": "16:9" },
+        { "value": "4/3", "label": "4:3" },
+        { "value": "3/2", "label": "3:2" },
+        { "value": "1/1", "label": "1:1 Quadrata" },
+        { "value": "5/4", "label": "5:4" }
+      ],
+      "default": "4/3"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Spazio tra le card (desktop)",
+      "min": 4,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Arrotondamento angoli card",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Padding interno testo",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Tipografia"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Dimensione titolo card (desktop)",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Dimensione descrizione card (desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Intestazione sezione (opzionale)"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sottotitolo"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titolo sezione"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Dimensione titolo sezione",
+      "options": [
+        { "value": "h4", "label": "Piccolo" },
+        { "value": "h3", "label": "Medio" },
+        { "value": "h2", "label": "Grande" },
+        { "value": "h1", "label": "Extra grande" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Allineamento intestazione",
+      "options": [
+        { "value": "left", "label": "Sinistra" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Destra" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Impostazioni mobile"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio_mobile",
+      "label": "Proporzioni card (mobile)",
+      "options": [
+        { "value": "16/9", "label": "16:9" },
+        { "value": "4/3", "label": "4:3" },
+        { "value": "3/2", "label": "3:2" },
+        { "value": "1/1", "label": "1:1 Quadrata" }
+      ],
+      "default": "4/3"
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Spazio tra le card (mobile)",
+      "min": 4,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Dimensione titolo card (mobile)",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Dimensione descrizione card (mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titolo",
+          "default": "TITOLO CARD"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Descrizione",
+          "default": "Breve descrizione del contenuto della card."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (opzionale)"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Intensità overlay scuro",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 55
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid cards overlay",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "PREPARAZIONE",
+            "description": "Meccanica e chimica dell'unghia naturale. Come evitare sollevamenti."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "SEMIPERMANENTE RINFORZATO",
+            "description": "Tecniche per garantire una maggiore durata del gel, anche sulle unghie più deboli."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "GEL IN COPERTURA",
+            "description": "Ricostruzioni e dual form. Come lavorarlo evitando sollevamenti."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "NAIL ART",
+            "description": "Tecniche e applicazioni per realizzare decorazioni precise, armoniose e durature."
+          }
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.overlay"]
+  }
+}
+{% endschema %}

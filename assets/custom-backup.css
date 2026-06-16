@@ -1,0 +1,40 @@
+@media(min-width: 767px){
+    #shopify-section-template--24126827364735__video_with_text_gjJMkD .page-width {
+        padding-inline: 0;
+    }
+}
+div#quick-quote-wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+1#qq-header {
+    margin-bottom: 20px;
+}
+@media only screen and (max-width: 900px) {
+    #pnl-request-quote-wrapper {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}
+button#submit-quote {
+    border: 1px solid;
+}
+button#back-to-cart {
+    border: 1px solid;
+}
+
+div#shopify-block-AMjViZy84K1BSQm45O__quick_quote_quote_button_3J48Ef {
+    border-radius: 30px;
+    background: #f9f8f2;
+    border: 1px solid;
+    text-align: center;
+    height: 44px;
+    display: flex
+;
+    align-items: center;
+}
+div#shopify-block-AMjViZy84K1BSQm45O__quick_quote_quote_button_3J48Ef a{
+width:200px!important ;
+margin:0px auto;
+}
+/* .th_prd_wl_btn .th_wl_button{background: #f9f8f2 !important;} */

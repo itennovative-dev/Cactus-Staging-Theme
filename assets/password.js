@@ -1,0 +1,2 @@
+if(!customElements.get("password-details")){class PasswordDetails extends AccordionDetails{constructor(){super();this.open=!1}}
+customElements.define('password-details',PasswordDetails,{extends:'details'})}

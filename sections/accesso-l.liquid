@@ -1,0 +1,53 @@
+<script>
+  console.log('LIQUID customer:', {{ customer | json }});
+  console.log('LIQUID tags:', {{ customer.tags | json }});
+</script>
+
+{% assign has_accesso_liquid = false %}
+{% if customer %}
+  {% for tag in customer.tags %}
+    {% assign clean_tag = tag | strip | downcase %}
+    {% if clean_tag == 'accesso-liquid' %}
+      {% assign has_accesso_liquid = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% unless has_accesso_liquid %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var m = document.getElementById('MainContent');
+  if (m) {
+    m.innerHTML = '\
+      <div style="text-align:center;padding:80px 20px;font-family:inherit;color:#1a5c52;">\
+        <p style="font-size:18px;margin-bottom:20px;">\
+          Per visualizzare questa videolezione devi aver acquistato almeno un prodotto tra:\
+        </p>\
+        <ul style="list-style:none;padding:0;margin:0 auto;max-width:520px;">\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-nude-caramel-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Nude Caramel 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-nude-brulee-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Nude Brulée 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-warm-peach-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Warm Peach 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-light-nude-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Light Nude 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-perfect-milky-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Perfect Milky 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-milky-pink-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Milky Pink 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-ballerina-pink-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Ballerina Pink 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-light-peach-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Light Peach 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-neutral-pink-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Neutral Pink 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-milky-nude-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Milky Nude 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-baby-pink-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Baby Pink 14 ml</a></li>\
+          <li style="margin-bottom:10px;"><a href="https://cactusforyou.com/products/liquid-gel-nude-mauve-14-ml" style="color:#1a5c52;text-decoration:underline;">Liquid Gel Nude Mauve 14 ml</a></li>\
+        </ul>\
+      </div>';
+  }
+});
+</script>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Controllo Accesso Liquid",
+  "settings": [],
+  "presets": [{ "name": "Controllo Accesso Liquid" }]
+}
+{% endschema %}

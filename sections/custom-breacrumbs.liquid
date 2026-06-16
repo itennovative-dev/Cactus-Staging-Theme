@@ -1,0 +1,108 @@
+{% comment %} sections/custom-breadcrumb.liquid {% endcomment %}
+
+{% liquid
+  assign justify = section.settings.text_alignment | default: 'start'
+%}
+
+{% if section.blocks.size > 0 %}
+  <div
+    id="{{ section.id }}"
+    class="section--breadcrumb"
+    data-section-type="breadcrumb"
+    data-section-id="{{ section.id }}"
+    style="background:#f9f8f2;"
+  >
+    {% capture separator_icon %}
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="rtl-flip-x">
+        <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    {% endcapture %}
+
+    <div class="page-width">
+      <nav
+        class="breadcrumbs justify-center md:justify-{{ justify }}"
+        role="navigation"
+        aria-label="breadcrumbs"
+      >
+        {%- for block in section.blocks -%}
+          {%- if block.settings.label != blank -%}
+
+            {%- unless forloop.first -%}
+              <span aria-hidden="true" class="breadcrumbs--sep">{{ separator_icon }}</span>
+            {%- endunless -%}
+
+            {%- if block.settings.url != blank -%}
+              <a href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+                {{- block.settings.label -}}
+              </a>
+            {%- else -%}
+              <span {{ block.shopify_attributes }}>{{ block.settings.label }}</span>
+            {%- endif -%}
+
+          {%- endif -%}
+        {%- endfor -%}
+      </nav>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Breadcrumb personalizzata",
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.overlay"]
+  },
+  "limit": 1,
+  "settings": [
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "t:settings_schema.global.settings.text_alignment.label",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+        },
+        {
+          "value": "end",
+          "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "level",
+      "name": "Livello",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Etichetta",
+          "placeholder": "es. Collezione Uomo"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Breadcrumb personalizzata",
+      "blocks": [
+        { "type": "level" },
+        { "type": "level" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,179 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "access_control": {
+      "type": "custom-liquid",
+      "name": "Controllo accesso",
+      "settings": {
+        "custom_liquid": "{% unless customer and customer.tags contains 'accesso-academy' %}<script>document.addEventListener('DOMContentLoaded',function(){var m=document.getElementById('MainContent');if(m){m.innerHTML='<div style=\"text-align:center;padding:80px 20px;font-family:inherit;\"><p style=\"font-size:18px;color:#1a5c52;\">Per visualizzare questa videolezione devi aver acquistato il <strong><a href=\"https:\\/\\/cactusforyou.com\\/products\\/palette-acquerello-glitter\" style=\"color:#1a5c52;\">Palette Acquerello Glitter<\\/a> \\/ <a href=\"https:\\/\\/cactusforyou.com\\/products\\/palette-acquerello\" style=\"color:#1a5c52;\">Palette Acquerello<\\/a><\\/strong>.<\\/p><\\/div>';}});</script>{% endunless %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "custom_breacrumbs_R8Pxhn": {
+      "type": "custom-breacrumbs",
+      "blocks": {
+        "level_6i7Gze": {
+          "type": "level",
+          "settings": {
+            "label": "Cactus Academy",
+            "url": "shopify://pages/cactus-for-you-academy"
+          }
+        },
+        "level_VQcL4W": {
+          "type": "level",
+          "settings": {
+            "label": "Nail Art",
+            "url": "shopify://pages/nail-art"
+          }
+        }
+      },
+      "block_order": [
+        "level_6i7Gze",
+        "level_VQcL4W"
+      ],
+      "name": "Breadcrumb personalizzata",
+      "settings": {
+        "text_alignment": "center"
+      }
+    },
+    "rich_text_7jnF6K": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ywLnpD": {
+          "type": "heading",
+          "settings": {
+            "heading": "L’arte dell’acquerello arriva nel mondo nails.",
+            "heading_size": "hd3",
+            "heading_highlight_style": "none"
+          }
+        },
+        "text_z4npXW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Capirai quali errori evitare quando disegni con gli acquerelli. Imparerai a realizzare petali, fiori, foglie e qualsiasi altro disegno. Con noi, anche la tecnica ad acquerello diventerà semplice.</p>",
+            "text_size": "text-sm"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ywLnpD",
+        "text_z4npXW"
+      ],
+      "custom_css": [],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_alignment": "center",
+        "padding_top": 50,
+        "padding_bottom": 20,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "custom_liquid_7gMeRn": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"page-width\"><video\n  src=\"https://shopify-r2.ldtsoft.work/live/course/file/shop-cactus-nail.myshopify.com/video-lezione-acquerelli_d95e49b8523368840b697ba0cbec737f.mp4\"\n  poster=\"https://shopify-r2.ldtsoft.work/live/course/file/shop-cactus-nail.myshopify.com/thumbnail-video-lezione-acquerelli2_ac9d119c3506fba3dd66e1eb7c0603f7.jpg\"\n  controls\n  playsinline\n  preload=\"metadata\"\n  style=\"border-radius: 16px;width: 100%; display: block;\"\n>\n  Il tuo browser non supporta la riproduzione video.\n</video>\n</div>",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 50
+      }
+    },
+    "rich_text_XTntnq": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AykNKj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Prodotti Utilizzati",
+            "heading_size": "h3",
+            "heading_highlight_style": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AykNKj"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_alignment": "center",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "grid_products_title_wfxEaL": {
+      "type": "grid-products-title",
+      "blocks": {
+        "product_card_WcGhbb": {
+          "type": "product_card",
+          "settings": {
+            "product": "palette-acquerello"
+          }
+        },
+        "product_card_i46PiX": {
+          "type": "product_card",
+          "settings": {
+            "product": "palette-acquerello-glitter"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_WcGhbb",
+        "product_card_i46PiX"
+      ],
+      "name": "Grid prodotti con titolo",
+      "settings": {
+        "container": "fixed",
+        "desktop_columns": "4",
+        "mobile_columns": "2",
+        "aspect_ratio": "1/1",
+        "gap": 34,
+        "gap_mobile": 10,
+        "border_radius": 14,
+        "title_color": "#1a5c52",
+        "title_size": 14,
+        "title_size_mobile": 12,
+        "title_weight": "500",
+        "active_border_color": "#2b7fff",
+        "highlight_first": false,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "access_control",
+    "main",
+    "custom_breacrumbs_R8Pxhn",
+    "rich_text_7jnF6K",
+    "custom_liquid_7gMeRn",
+    "rich_text_XTntnq",
+    "grid_products_title_wfxEaL"
+  ]
+}

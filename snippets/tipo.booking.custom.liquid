@@ -1,0 +1,171 @@
+<script>
+  const tipoCustom = {
+      render: function(){
+          this.initSelectors()
+          this.handlEvents()
+      },
+      initSelectors: function(){
+          window.TipoBookingParams = window.TipoBookingParams || {};
+          window.TipoBookingParams.selectors = window.TipoBookingParams.selectors || {};
+          window.TipoBookingParams.selectors.collectionProductItem = ".product-grid-item[data-product-id]";
+          window.TipoBookingParams.selectors.collectionActionItem = ".btn--quick";
+          window.TipoBookingParams.selectors.collectionActionTextElement = ".btn__text";
+      },
+      handlEvents: function(){
+          const app = this;
+
+          window.addEventListener('load', () => {
+              if(window?.Tipo?.Booking){
+                  app.handleLoadServices()
+                  const products = window.Tipo.Booking.configs.products;
+                  app.initGridButton(products)
+              }
+          })
+
+          document.addEventListener('tipo.booking.collection.filtered', () => {
+              setTimeout(() => {
+                  if(window?.Tipo?.Booking){
+                      app.handleLoadServices()
+                      const products = window.Tipo.Booking.configs.products;
+                      app.initGridButton(products)
+                  }
+              }, 600)
+          })
+      },
+      initGridButton: function(products){
+          const bookingPage = document.querySelector('.tpb-booking-form.page')
+
+          if(bookingPage){
+              const productTemplates = products.map(product => {
+                  
+                  return `
+                      <div class="tpb-product-item">
+                          <div class="tpb-content">
+                              <div class="tpb-heading">
+                                  <h4>${product.title}</h4>
+                              </div>
+                              <button class="tpb-book-on-grid-button" type="button" onclick="Tipo.Booking.openWidget(${product.id})">
+                                ${Tipo.Booking.trans.book_now}
+                              </button>
+                          </div>
+                      </div>
+                  `;
+              }).join(',')
+            
+              bookingPage.innerHTML = productTemplates.replaceAll(',', '');
+          }
+
+          const productItems = document.querySelectorAll(window.TipoBookingParams.selectors.collectionProductItem)
+
+          if(productItems.length && window.Tipo.Booking.settings.general.quickview_enable){
+              const productIds = products.map(product => product.id)
+              productItems.forEach(productItem => {
+                  const productId = productItem.getAttribute('data-product-id')
+
+                  if(productIds.includes(productId) && !productItem.querySelector('.tpb-book-button')){
+                      const actionItem = productItem.querySelector(window.TipoBookingParams.selectors.collectionActionItem)
+
+                      if(actionItem){
+                          const cloned = actionItem.cloneNode(true);
+                          cloned.classList.add('tpb-book-button');
+                          cloned.setAttribute('type', 'button')
+                          cloned.removeAttribute('name')
+
+                          const textElement = cloned.querySelector(window.TipoBookingParams.selectors.collectionActionTextElement) || cloned;
+                          textElement.innerHTML = window.Tipo.Booking.trans?.book_now;
+                        
+                          cloned.addEventListener('click', (e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                            
+                              Tipo.Booking.openWidget(productId)
+                          })
+      
+                          actionItem.after(cloned);
+                          actionItem.style.display = 'none';
+                      }
+                  }
+              })
+          }
+      },
+      handleLoadServices: function(){
+          const app = this;
+          if(window?.Tipo?.Booking){
+              const products = window.Tipo.Booking.configs.products;
+
+              if(products.length){
+                  const handles = products.map(product => product.handle)
+
+                  fetch(`${window.location.origin}//apps/tipo-appointment-booking/products?${new URLSearchParams({ handles })}`)
+                      .then(response => response.json())
+                      .then(data => {
+                          data.forEach(product => {
+                              Tipo.Booking.collections[product.id] = product;
+                          })
+                      })
+                      .finally(() => {
+                          document.querySelector('body').classList.add('tpb-loaded')
+                      })
+              }
+          }
+      }
+  }
+  tipoCustom.render()
+</script>
+<style>
+  body:not(.tpb-loaded) .tpb-book-on-grid-button{
+      pointer-events: none !important;
+      opacity: 0.6;
+      cursor: default;
+  }
+  @media(max-width: 640px){
+      .tpb-booking-form.page {
+          max-width: 100% !important;
+      }
+      .tpb-product-item{
+          width: 100% !important; 
+      }
+  }
+  .tpb-booking-form.page {
+      max-width: 1000px;
+      margin: 50px auto 30px;
+      display: flex;
+      gap: 20px;
+      align-items: baseline;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  .tpb-book-on-grid-button{
+      border: 1px solid #fff !important;
+  }
+  .tpb-product-item{
+      border: 1px solid gray;
+      border-radius: 10px;
+      padding: 20px;
+      gap: 20px;
+      width: 300px;
+  }
+  .tpb-heading{
+      margin-bottom: 20px;
+  }
+  .tpb-product-item .tpb-image {
+      width: 40px;
+      height: 40px;
+  }
+  .tpb-product-item .tpb-image img{
+      margin: 0;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+  }
+  .tpb-product-item + .tpb-product-item{
+      margin-top: 25px;
+  }
+  .tpb-product-item h4{
+      margin-top: 0px;
+      font-weight: 600;
+  }
+  .tpb-booking-form.page{
+      margin: 0 auto 30px;
+  }
+</style>

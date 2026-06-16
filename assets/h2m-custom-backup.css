@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+.h2m-menu-nav *{font-family: "Poppins", sans-serif !important;}
+.h2m-menu-nav .h2m-tab-item.h2m-menu-active>.h2m-tab-item--link,
+.h2m-menu-nav .h2m-tree-menu-item.h2m-menu-active>.h2m-tree-menu--link,
+.h2m-menu-nav .h2m-tree-menu-item.h2m-menu-active>.h2m-tree-menu--link a{
+  background: #fff !important;
+}
+.h2m-menu-nav .h2m-menu-item.h2m-main-menu-item div.h2m-menu-item-inner,
+.h2m-menu-nav .h2m-menu-item.h2m-main-menu-item a.h2m-menu-item-inner{padding: 10px 10px !important;}
+.h2m-menu-nav.h2m-menu__mobile ul{
+  padding-left: 20px !important;
+}
+.h2m-menu-nav.h2m-menu__mobile .h2m-menu-indicator{width: 100px !important;justify-content: flex-end !important;}
+.h2m-menu-nav.h2m-menu__mobile .h2m-tree-list>.h2m-tree-menu-item.h2m-menu-active>.h2m-menu-item-inner--sub>.h2m-menu-indicator>svg{transform: rotate(-180deg);}

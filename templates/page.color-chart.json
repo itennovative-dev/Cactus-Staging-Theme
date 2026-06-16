@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "gel_experience": {
+      "type": "gsap-gel-experience",
+      "settings": {
+        "collection_handle": "smalto-semipermanente",
+        "image_width": 260,
+        "grid_gap": 20,
+        "sf_token": "7ca1a0b104dd941c0417df269d4f0295"
+      }
+    }
+  },
+  "order": ["gel_experience"]
+}

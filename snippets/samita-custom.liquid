@@ -1,0 +1,225 @@
+<style>
+  html body:not(.samitalock-no-active) div[samita_pass_p_all],
+  html body:not(.samitalock-no-active) div[samita_pass_c_all],
+  html body:not(.samitalock-no-active) div[samita_all_p],
+  html body:not(.samitalock-no-active) div[samita_manual_p_all],
+  html body:not(.samitalock-no-active) div[samita_manual_c_all],
+  html body:not(.samitalock-no-active) div[samita_sec_p_all]{
+    display:none !important;
+  }
+
+  html body:not(.samitalock-no-active) div[samita_pass_p_price] .price,
+  html body:not(.samitalock-no-active) div[samita_pass_c_price] .price,
+  html body:not(.samitalock-no-active) div[samita_all_p_price] .price,
+  html body:not(.samitalock-no-active) div[samita_manual_p_price] .price,
+  html body:not(.samitalock-no-active) div[samita_manual_c_price] .price,
+   html body:not(.samitalock-no-active) div[samita_sec_p_price] .price{
+    display:none !important;
+  }
+
+  html body:not(.samitalock-no-active) li[samita_pass_p_all],
+  html body:not(.samitalock-no-active) li[samita_pass_c_all],
+  html body:not(.samitalock-no-active) li[samita_all_p],
+  html body:not(.samitalock-no-active) li[samita_manual_p_all],
+  html body:not(.samitalock-no-active) li[samita_manual_c_all],
+  html body:not(.samitalock-no-active) li[samita_sec_p_all]{
+    display:none !important;
+  }
+
+  html body:not(.samitalock-no-active) li[samita_pass_p_price] .f-price__regular,
+  html body:not(.samitalock-no-active) li[samita_pass_c_price] .f-price__regular,
+  html body:not(.samitalock-no-active) li[samita_all_p_price] .f-price__regular,
+  html body:not(.samitalock-no-active) li[samita_manual_p_price] .f-price__regular,
+  html body:not(.samitalock-no-active) li[samita_manual_c_price] .f-price__regular,
+   html body:not(.samitalock-no-active) li[samita_sec_p_price] .f-price__regular{
+    display:none !important;
+  }
+
+  
+
+  html body:not(.samitalock-no-active) div[samita_pass_p_atc] .atc,
+  html body:not(.samitalock-no-active) div[samita_pass_c_atc] .atc,
+  html body:not(.samitalock-no-active) div[samita_all_p_atc] .atc,
+  html body:not(.samitalock-no-active) div[samita_manual_p_atc] .atc,
+  html body:not(.samitalock-no-active) div[samita_manual_c_atc] .atc,
+  html body:not(.samitalock-no-active) div[samita_manual_c_atc] .atc{
+    display:none !important;
+  }
+
+  html body .lock__notificationFooter #passcode{
+    flex:1 !important;
+  }
+
+  html body .lock__notificationTemplateWrapper{
+    width:50% !important;
+  }
+
+  html body .lock__notificationTemplateWrapper .Lock__Error{
+    margin-top:5px !important;
+  }
+
+  html body .Lock__Watermark{
+    padding: 0 40px !important;
+  }
+  
+
+  html body .Lock__Watermark p{
+    font-size: 15px !important;
+    font-family: inherit;
+  }
+
+  @media(max-width:1024px){
+    html body .lock__notificationTemplateWrapper{
+      width:100% !important;
+    }
+  }
+html body .lock__notificationFooter #passcode:focus-visible {
+    border: 1px solid #ccc !important;
+}
+
+  
+</style>
+<script>
+window.Samita = window.Samita || {}
+  window.Samita.SamitaLocksAccessParams =  window.Samita.SamitaLocksAccessParams || {}
+  window.Samita.SamitaLocksAccessParams.selector = window.Samita.SamitaLocksAccessParams.selector || {}
+  window.Samita.SamitaLocksAccessParams.selector.product = {
+    btnAtc: ".product-form__buttons",
+    mainContent: "main#MainContent",
+    price: 'div[id*="price-template"]'
+  }
+
+
+   window.Samita.SamitaLocksAccessParams.selector.collection = {
+    btnAtc: ".product-card__actions.product-card__main-actions",
+    collectionSelect: "ul.grid.grid-cols-1 li.relative.bg-primary-background.w-full",
+    price: ".f-price__regular",
+    productSelector: "div#ProductGridContainer .f-column.card"
+   }
+
+  window.Samita.SamitaLocksAccessParams.selector.index = {
+    btnAtc: ".product-card__actions.product-card__main-actions",
+    collectionSelect: "ul.grid.grid-cols-1 li.relative.bg-primary-background.w-full",
+    price: ".f-price__regular",
+    productSelector: "div#ProductGridContainer .f-column.card"
+  }
+
+  window.Samita.SamitaLocksAccessParams.selector.otherPage= {
+    btnAtc: ".product-card__actions.product-card__main-actions",
+    collectionSelect: "ul.grid.grid-cols-1 li.relative.bg-primary-background.w-full",
+    price: ".f-price__regular",
+    productSelector: "div#ProductGridContainer .f-column.card"
+  }
+
+  window.Samita.SamitaLocksAccessParams.selector.searchPage= {
+    btnAtc: ".product-card__actions.product-card__main-actions",
+    collectionSelect: "ul.grid.grid-cols-1 li.relative.bg-primary-background.w-full",
+    price: ".f-price__regular",
+    productSelector: "div#ProductGridContainer .f-column.card"
+  }
+  let allCookies = document.cookie;
+  let cookiesArray = allCookies.split(';');
+
+  if(allCookies.includes('secret__')){
+    setInterval(function(){
+      if(document.querySelectorAll(`div[sami_sec]`).length){
+        document.querySelectorAll(`div[sami_sec]`).forEach(function(item){
+          item.removeAttribute('sami_sec')
+          item.removeAttribute('samita_sec_p_all')
+          item.removeAttribute('samita_sec_p_atc')
+          item.removeAttribute('samita_sec_p_price')
+         
+        })
+      }
+    },500)
+  }
+
+  if (allCookies.includes('passcode')) {
+      for (const cookie of cookiesArray) {
+        const [key, value] = cookie.trim().split('=');
+        if (key.includes('passcode')) {
+          setInterval(function(){
+            if(document.querySelectorAll(`div[${key}]`).length){
+              document.querySelectorAll(`div[${key}]`).forEach(function(item){
+                item.removeAttribute(key)
+                item.removeAttribute('samita_pass_p_all')
+                item.removeAttribute('samita_pass_c_all')
+                item.removeAttribute('samita_pass_p_price')
+                item.removeAttribute('samita_pass_c_price')
+                item.removeAttribute('samita_pass_p_atc')
+                item.removeAttribute('samita_pass_c_atc')
+              })
+            }
+          },500)
+        }
+    }
+  }
+
+  setTimeout(function(){
+    
+    if(typeof Samita !== "object" || typeof Samita.LockAccess !== 'object'){
+      document.querySelector('body').classList.add('samitalock-no-active');
+    }
+  },600)
+</script>
+
+
+<script>
+  window.Samita = window.Samita || {}
+  Samita.Wholesale = Samita.Wholesale || {}
+  Samita.Wholesale.overrideOptions = Samita.Wholesale.overrideOptions || {}
+  Samita.Wholesale.overrideOptions.selectors = Samita.Wholesale.overrideOptions.selectors || {}
+  Samita.Wholesale.overrideOptions.selectors.product = {
+    "element" : [".product"],
+    "form": [ "[samitaWS-product-form]","[data-type=\"add-to-cart-form\"]"],
+    "price": [ ".product__block--price .f-price__regular"],
+    "unitPrice": "[samitaWS-product-unit-price], .product__block--price .f-price__regular"
+  }
+  Samita.Wholesale.overrideOptions.selectors.collection = {
+    "price": ["[samitaWS-collection-product-price]",".f-price"],
+    "unitPrice": "[samitaWS-product-unit-price], .f-price"
+  }
+  Samita.Wholesale.overrideOptions.selectors.cart = {
+    "form": ["[samitaWS-checkout-form]","#MainContent"],
+    "page": [{
+        "lineItem": {
+          "key": ".cart-item",
+          "quantity": {
+              "wrapper": "[samitaWS-cart-line-item-qty-wrapper]",
+              "input": "[samitaWS-cart-line-item-qty], .quantity__input",
+              "decrease": "[samitaWS-cart-line-item-qty-decrease], [name=\"minus\"]",
+              "increase": "[samitaWS-cart-line-item-qty-increase],[name=\"plus\"]",
+            },
+          "removeButton": "[samitaWS-cart-line-item-remove-button], [is=\"cart-remove-item\"]",
+          "price": "[samitaWS-cart-product-main-price], .cart-item__price",
+          "unitPrice": "[samitaWS-cart-line-item-unit-price], .cart-item__price",
+          "priceEnd": "[samitaWS-cart-product-price-end], .cart-item__total",
+          "totalPrice": "[samitaWS-cart-line-item-total-price], .cart-item__total"
+        },
+        "subtotalPrice": "[samitaWS-cart-subtotal-price], .totals__subtotal-value",
+        "checkoutBtn": "button[name=\"checkout\"]"
+    }],
+    "drawerForm": [
+        "[samitaWS-drawer-form]","#CartDrawer"],
+    "drawer": [
+        {
+          "lineItem": {
+              "key": ".cart-item",
+              "quantity": {
+                  "wrapper": "[samitaWS-drawer-line-item-qty-wrapper], .cart-item__quantity",
+                  "input": "[samitaWS-drawer-line-item-qty], .quantity__input",
+                  "decrease": "[samitaWS-drawer-line-item-qty-decrease], [name=\"minus\"]",
+                  "increase": "[samitaWS-drawer-line-item-qty-increase], [name=\"plus\"]"
+              },
+              "removeButton": "[samitaWS-drawer-line-item-remove-button], .cart-item__remove",
+              "price": "[samitaWS-drawer-product-main-price], .cart-item__prices",
+              "unitPrice": "[samitaWS-drawer-line-item-unit-price], .cart-item__prices",
+              "priceEnd": "[samitaWS-cart-product-price-end], .cart-item__prices",
+              "totalPrice": "[samitaWS-drawer-line-item-total-price], .cart-item__prices"
+          },
+          "subtotalPrice": "[samitaWS-drawer-line-item-subtotal-price], .totals__subtotal-value",
+          "checkoutBtn": "[samitaWS-drawer-checkout-btn], button[name=\"checkout\"]",
+        }
+    ]
+  }
+</script>

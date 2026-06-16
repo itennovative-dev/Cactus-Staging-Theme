@@ -1,0 +1,174 @@
+    {% liquid
+        assign locales = shop.metafields.foxify.locales.value
+        assign current_locale = request.locale.iso_code
+        assign primary_locale = current_locale
+        for locale in shop.published_locales
+        if locale.primary
+            assign primary_locale = locale.iso_code
+            break
+        endif
+        endfor
+        assign translation = locales[current_locale] | default: locales[primary_locale]
+    %}
+    <script>
+        window.Foxify = window.Foxify || {}
+        Foxify.ThemeStyles = {
+            product: "https:{{ 'foxify-product.css' | asset_url }}",
+            swiper: "https:{{ 'foxify-swiper.css' | asset_url }}",
+        }
+
+        Foxify.ThemeScripts = {
+            productModel: "https:{{ 'foxify-product-model.js' | asset_url }}",
+            productMedia: "https:{{ 'foxify-media-gallery.js' | asset_url }}",
+            variantPicker: "https:{{ 'foxify-variant-picker.js' | asset_url }}"
+        }
+
+        Foxify.pageId = '1733738310qlvwt'
+        Foxify.default = false
+    </script>
+    <div class="f-app f:content">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,400&display=swap" id="Poppins" rel="stylesheet">
+{{ 'foxify-1733738310qlvwt.css' | asset_url | stylesheet_tag }}
+<style>body .f\:article-card__meta-item {
+  color: #9b9b9b;
+  font-weight: 500;
+}
+
+.f-blog-post__meta ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.f-blog-post__meta li + li {
+	margin-left: 20px;
+	padding-left: 20px;
+	position: relative;
+}
+
+.f-blog-post__meta li + li:before {
+	content: '';
+	width: 2px;
+	height: 16px;
+	position: absolute;
+	left: -1px;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background-color: rgba(255,255,255,.29);
+}</style>
+<div id="f-text-section-1733745404TC8Ho" class="f:sections f:text-section f-text-section-1733745404TC8Ho"><div class="f:container-narrow"><div id="f-grid-17337454046py7y" class="f:blocks f:grid f-grid-17337454046py7y" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733745404ozvt9" class="f:blocks f:col f-col-1733745404ozvt9 f:column"><div id="f-richtext-17337454040Hzb7" class="f:blocks f:richtext f-richtext-17337454040Hzb7 f:content-block f:gs-subheading f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-17337454040Hzb7-text_html' | t }}</div><h2 id="f-heading-1733745404WoYeg" class="f:blocks f:heading f-heading-1733745404WoYeg f:content-block f:gs-heading-2"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733745404WoYeg-text_html' | t }}</span></h2></div></div></div></div><div id="f-text-section-1733738235LGnCZ" class="f:sections f:text-section f-text-section-1733738235LGnCZ"><div class="f:container-narrow"><div id="f-grid-1733738235oHv3F" class="f:blocks f:grid f-grid-1733738235oHv3F" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733738235YvdkM" class="f:blocks f:col f-col-1733738235YvdkM f:column"><h2 id="f-heading-1733738235tusTD" class="f:blocks f:heading f-heading-1733738235tusTD f:content-block f:gs-heading-2"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733738235tusTD-text_html' | t }}</span></h2><div id="f-richtext-1733738235lThOl" class="f:blocks f:richtext f-richtext-1733738235lThOl f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733738235lThOl-text_html' | t }}</div></div></div></div></div><div id="f-text-section-1733738235IiB5k" class="f:sections f:text-section f-text-section-1733738235IiB5k"><div class="f:container-narrow"><div id="f-grid-1733738235ERgsL" class="f:blocks f:grid f-grid-1733738235ERgsL" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733738235JDsQj" class="f:blocks f:col f-col-1733738235JDsQj f:column"><div id="f-richtext-1733738235xSoQ1" class="f:blocks f:richtext f-richtext-1733738235xSoQ1 f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733738235xSoQ1-text_html' | t }}</div><div id="f-richtext-1733738235LQk1y" class="f:blocks f:richtext f-richtext-1733738235LQk1y f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733738235LQk1y-text_html' | t }}</div><div id="f-richtext-1733738235BexPh" class="f:blocks f:richtext f-richtext-1733738235BexPh f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733738235BexPh-text_html' | t }}</div></div></div></div></div><div id="f-text-section-1733738591QGhRt" class="f:sections f:text-section f-text-section-1733738591QGhRt"><div class="f:container-narrow"><div id="f-grid-17337385917ArN4" class="f:blocks f:grid f-grid-17337385917ArN4" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733738591pVcfi" class="f:blocks f:col f-col-1733738591pVcfi f:column"><h3 id="minimalismo-moderno" class="f:blocks f:heading f-heading-1733738599PWtFC f:content-block f:gs-heading-3"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733738599PWtFC-text_html' | t }}</span></h3><div id="f-richtext-1733738591pkpI4" class="f:blocks f:richtext f-richtext-1733738591pkpI4 f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733738591pkpI4-text_html' | t }}</div></div></div></div></div>{{ 'foxify-lookbook.css' | asset_url | stylesheet_tag }}<div id="f-lookbook-1733738654INI4f" class="f:sections f:lookbook f-lookbook-1733738654INI4f" style="--f-container-width:800px"><div class="f:container-custom"><div id="f-grid-1733738948kkMGM" class="f:blocks f:grid f-grid-1733738948kkMGM f:justify-center f:items-center" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733738948RSCKg" class="f:blocks f:col f-col-1733738948RSCKg f:column"><div id="f-lookbook-item-17337389487A30o" class="f:blocks f:lookbook-item f-lookbook-item-17337389487A30o">{{ 'foxify-lookbook.css' | asset_url | stylesheet_tag }}<div class="f:lookbook-card"><div class="f:lookbook-card__inner" data-lookbook-inner="true"><div class="f:lookbook-card__image " style="--f-aspect-ratio:1"><f-image class="f:image " style="--f-aspect-ratio:1"><img srcSet="https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=165 165w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=360 360w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=533 533w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=720 720w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=940 940w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=1066 1066w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=1500 1500w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=1780 1780w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510&width=2000 2000w, https://cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463.jpg?v=1733737510 2500w" src="//cdn.shopify.com/s/files/1/0852/1148/0367/files/5A_329ae1fd-1627-4099-bcb0-2a0dcd6c5463_360x.jpg?v=1733737510" sizes="(min-width: 1200px) 533px, (min-width: 990px) calc((100vw - 130px) / 3), (min-width: 750px) calc((100vw - 120px) / 2), calc((100vw - 35px) / 2)" alt="5A.jpg" loading="lazy" width="2500" height="2500"/></f-image></div>
+        {% liquid
+          assign product_f-lookbook-item-17337389487A30o_0 = all_products['base-hard-cactus-clear-15ml']
+        %}
+      <f-lookbook-icon class="f:lookbook-card__annotation" style="top:14%;left:21%" data-lookbook-top="14" data-lookbook-left="21" data-lookbook-index="0"><span class="f:lookbook-card__pin f:lookbook-card__pin--undefined"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></span><div class="f:lookbook-card__product f:flex" data-lookbook-product="true"><div class="f:lookbook-card__product-image f:image--hover-effect relative"><a class="f:full-width-link" href="{{ product_f-lookbook-item-17337389487A30o_0.url }}"><span class="f:visually-hidden">{{ product_f-lookbook-item-17337389487A30o_0.title }}</span></a><div class="f:image" style="--f-aspect-ratio:1"><img src="{{ product_f-lookbook-item-17337389487A30o_0.featured_media | image_url: width: 400 }}" alt="{{ product_f-lookbook-item-17337389487A30o_0.featured_media.alt }}" loading="lazy"/></div></div><div class="f:lookbook-card__product-info f:flex-1"><a href="{{ product_f-lookbook-item-17337389487A30o_0.url }}" class="f:lookbook-card__product-title">{{ product_f-lookbook-item-17337389487A30o_0.title }}</a><div class="f:lookbook-card__product-price">{% render 'foxify-price', product: product_f-lookbook-item-17337389487A30o_0 %}</div><a class="f:lookbook-card__product-btn f:gs-link-button" href="{{ product_f-lookbook-item-17337389487A30o_0.url }}">{{ translation.products.product.view_full_details }}</a></div></div></f-lookbook-icon>
+        {% liquid
+          assign product_f-lookbook-item-17337389487A30o_1 = all_products['acrygel-barbie-ricostruzione-unghie']
+        %}
+      <f-lookbook-icon class="f:lookbook-card__annotation" style="top:45%;left:70%" data-lookbook-top="45" data-lookbook-left="70" data-lookbook-index="1"><span class="f:lookbook-card__pin f:lookbook-card__pin--undefined"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></span><div class="f:lookbook-card__product f:flex" data-lookbook-product="true"><div class="f:lookbook-card__product-image f:image--hover-effect relative"><a class="f:full-width-link" href="{{ product_f-lookbook-item-17337389487A30o_1.url }}"><span class="f:visually-hidden">{{ product_f-lookbook-item-17337389487A30o_1.title }}</span></a><div class="f:image" style="--f-aspect-ratio:1.0395939086294417"><img src="{{ product_f-lookbook-item-17337389487A30o_1.featured_media | image_url: width: 400 }}" alt="{{ product_f-lookbook-item-17337389487A30o_1.featured_media.alt }}" loading="lazy"/></div></div><div class="f:lookbook-card__product-info f:flex-1"><a href="{{ product_f-lookbook-item-17337389487A30o_1.url }}" class="f:lookbook-card__product-title">{{ product_f-lookbook-item-17337389487A30o_1.title }}</a><div class="f:lookbook-card__product-price">{% render 'foxify-price', product: product_f-lookbook-item-17337389487A30o_1 %}</div><a class="f:lookbook-card__product-btn f:gs-link-button" href="{{ product_f-lookbook-item-17337389487A30o_1.url }}">{{ translation.products.product.view_full_details }}</a></div></div></f-lookbook-icon></div></div></div></div></div></div></div><div id="f-text-section-1733738235uOaXg" class="f:sections f:text-section f-text-section-1733738235uOaXg"><div class="f:container-narrow"><div id="f-grid-17337382359cLgr" class="f:blocks f:grid f-grid-17337382359cLgr" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733738235e7fmT" class="f:blocks f:col f-col-1733738235e7fmT f:column"><h2 id="f-heading-1733738235FmX9n" class="f:blocks f:heading f-heading-1733738235FmX9n f:content-block f:gs-heading-3"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733738235FmX9n-text_html' | t }}</span></h2><div id="f-richtext-1733738235WoKnq" class="f:blocks f:richtext f-richtext-1733738235WoKnq f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733738235WoKnq-text_html' | t }}</div></div></div></div></div><div id="f-text-section-1733738235FDfY0" class="f:sections f:text-section f-text-section-1733738235FDfY0"><div class="f:container-narrow"><div id="f-grid-1733738235lAbea" class="f:blocks f:grid f-grid-1733738235lAbea" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733738235x83QA" class="f:blocks f:col f-col-1733738235x83QA f:column"><h2 id="f-heading-1733738235ZJpuT" class="f:blocks f:heading f-heading-1733738235ZJpuT f:content-block f:gs-heading-3"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733738235ZJpuT-text_html' | t }}</span></h2><div id="f-richtext-1733738235KxAPb" class="f:blocks f:richtext f-richtext-1733738235KxAPb f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733738235KxAPb-text_html' | t }}</div></div></div></div></div><div id="f-text-section-17337401818r3Ih" class="f:sections f:text-section f-text-section-17337401818r3Ih"><div class="f:container-narrow"><div id="f-grid-17337401817zT7t" class="f:blocks f:grid f-grid-17337401817zT7t" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733740181fMKZx" class="f:blocks f:col f-col-1733740181fMKZx f:column"><h2 id="f-heading-17337401814Zu1D" class="f:blocks f:heading f-heading-17337401814Zu1D f:content-block f:gs-heading-3"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-17337401814Zu1D-text_html' | t }}</span></h2><div id="f-richtext-1733740181wp2pe" class="f:blocks f:richtext f-richtext-1733740181wp2pe f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733740181wp2pe-text_html' | t }}</div></div></div></div></div><div id="f-text-section-1733740206sQJY6" class="f:sections f:text-section f-text-section-1733740206sQJY6"><div class="f:container-narrow"><div id="f-grid-1733740206BR9Ge" class="f:blocks f:grid f-grid-1733740206BR9Ge" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733740206aDwDK" class="f:blocks f:col f-col-1733740206aDwDK f:column"><h2 id="f-heading-1733740206R4In4" class="f:blocks f:heading f-heading-1733740206R4In4 f:content-block f:gs-heading-3"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733740206R4In4-text_html' | t }}</span></h2><div id="f-richtext-173374020690WCI" class="f:blocks f:richtext f-richtext-173374020690WCI f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-173374020690WCI-text_html' | t }}</div></div></div></div></div><div id="f-text-section-1733740237of5J8" class="f:sections f:text-section f-text-section-1733740237of5J8"><div class="f:container-narrow"><div id="f-grid-1733740237lUvPY" class="f:blocks f:grid f-grid-1733740237lUvPY" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733740237YGaE2" class="f:blocks f:col f-col-1733740237YGaE2 f:column"><h2 id="f-heading-1733740237Z7LKw" class="f:blocks f:heading f-heading-1733740237Z7LKw f:content-block f:gs-heading-3"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733740237Z7LKw-text_html' | t }}</span></h2><div id="f-richtext-1733740237XOpm0" class="f:blocks f:richtext f-richtext-1733740237XOpm0 f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733740237XOpm0-text_html' | t }}</div></div></div></div></div><div id="f-text-section-1733740261hzw7r" class="f:sections f:text-section f-text-section-1733740261hzw7r"><div class="f:container-narrow"><div id="f-grid-1733740261KeyFP" class="f:blocks f:grid f-grid-1733740261KeyFP" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733740261BAnLL" class="f:blocks f:col f-col-1733740261BAnLL f:column"><h2 id="f-heading-1733740261NCBa7" class="f:blocks f:heading f-heading-1733740261NCBa7 f:content-block f:gs-heading-3"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733740261NCBa7-text_html' | t }}</span></h2><div id="f-richtext-1733740261VrsrN" class="f:blocks f:richtext f-richtext-1733740261VrsrN f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733740261VrsrN-text_html' | t }}</div></div></div></div></div><div id="f-text-section-1733738235MPSaF" class="f:sections f:text-section f-text-section-1733738235MPSaF"><div class="f:container-narrow"><div id="f-grid-1733738235wvUOj" class="f:blocks f:grid f-grid-1733738235wvUOj" style="--f-grid-columns-sm:minmax(0, 12fr);--f-grid-columns-md:minmax(0, 12fr);--f-grid-columns-lg:minmax(0, 12fr);--f-grid-columns-xl:minmax(0, 12fr)"><div id="f-col-1733738235MRVbN" class="f:blocks f:col f-col-1733738235MRVbN f:column"><div id="f-richtext-1733738235pFqYa" class="f:blocks f:richtext f-richtext-1733738235pFqYa f:content-block f:gs-body-text f:rte">
+{{ 'sections.foxify-1733738310qlvwt.f-richtext-1733738235pFqYa-text_html' | t }}</div></div></div></div></div><div id="f-featured-collection-1733738235LBMOL" class="f:sections f:featured-collection f-featured-collection-1733738235LBMOL"><div class="f:container-narrow">{{ 'foxify-component-product-card.css' | asset_url | stylesheet_tag }}{{ 'foxify-swiper.css' | asset_url | stylesheet_tag }}<div class="f:blocks f:featured-collection-block f-featured-collection-block-1733738235vUqHa" data-animate-trigger="scroll_into_view" data-animate-name="fFadeInUp">{% liquid 
+          assign collection_f-featured-collection-block-1733738235vUqHa = collections['base-semipermanente']
+        %}<f-swiper-component id="swiper-f-featured-collection-block-1733738235vUqHa" class="f:swiper f:mobile-hidden" data-swiper-options="{&quot;navigation&quot;:false,&quot;pagination&quot;:true,&quot;autoplay&quot;:false,&quot;paginationType&quot;:&quot;fraction&quot;,&quot;spaceBetween&quot;:30,&quot;slidesPerView&quot;:3,&quot;slidesPerGroup&quot;:2,&quot;loop&quot;:false,&quot;breakpoints&quot;:{&quot;1023&quot;:{&quot;slidesPerView&quot;:4}}}" data-pagination-type="fraction" data-enable-custom-controls="false" style="--swiper-desktop-column:4"><div class="f:swiper-container"><div class="f:swiper-wrapper">{% if collection_f-featured-collection-block-1733738235vUqHa != blank %}{% for product in collection_f-featured-collection-block-1733738235vUqHa.products limit: 4 %}<div class="f:swiper-slide"><div class="f:column">{% render 'foxify-product-card', product: product, card_style: 'inherit', image_ratio: '1:1', text_align: 'inherit' %}</div></div> {% endfor %} {% else %}{% for i in (1..4) %}<div class="f:column">{% render 'foxify-product-card', onboarding: true %}</div>{% endfor %}{% endif %}</div><div class="f:swiper-controls f:swiper-pagination--fraction f:swiper-controls--static f:swiper-navigation--inline"><div class="f:swiper-controls__inner"><div class="f:swiper-button f:swiper-button-prev f:hidden"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.1875 9H2.8125" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.875 3.9375L2.8125 9L7.875 14.0625" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="f:swiper-pagination"></div><div class="f:swiper-button f:swiper-button-next f:hidden"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8125 9H15.1875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10.125 3.9375L15.1875 9L10.125 14.0625" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div></div></div></f-swiper-component><div class="f:grid f:grid-2-cols md:f:grid-3-cols xl:f:grid-4-cols f:mobile-swiper md:hidden" style="--f-grid-gap:30px;--f-grid-gap-mobile:15px;--swiper-column-width:66vw">{% if collection_f-featured-collection-block-1733738235vUqHa != blank %}{% for product in collection_f-featured-collection-block-1733738235vUqHa.products limit: 4 %}<div class="f:column">{% render 'foxify-product-card', product: product, card_style: 'inherit', image_ratio: '1:1', text_align: 'inherit' %}</div> {% endfor %} {% else %}{% for i in (1..4) %}<div class="f:column">{% render 'foxify-product-card', onboarding: true %}</div>{% endfor %}{% endif %}</div></div></div></div><div id="f-blog-posts-1733738235AvRrw" class="f:sections f:blog-posts f-blog-posts-1733738235AvRrw"><div class="f:container-narrow"><div id="f-section-header-1733738235D2bgw" class="f:blocks f:section-header f-section-header-1733738235D2bgw f:section-header"><h2 id="f-heading-1733738235GMFEl" class="f:blocks f:heading f-heading-1733738235GMFEl f:content-block f:gs-heading-4" data-animate-trigger="scroll_into_view" data-animate-name="fFadeInUp"><span>
+{{ 'sections.foxify-1733738310qlvwt.f-heading-1733738235GMFEl-text_html' | t }}</span></h2></div>{{ 'foxify-component-article-card.css' | asset_url | stylesheet_tag }}<div id="f-blog-posts-block-1733738235u6fkr" class="f:blocks f:blog-posts-block f-blog-posts-block-1733738235u6fkr"><div class="f:grid f:grid-1-cols md:f:grid-3-cols xl:f:grid-4-cols f:mobile-swiper" style="--f-grid-gap:30px;--f-grid-gap-mobile:15px;--swiper-column-width:66vw">{% liquid 
+            assign blog = blogs['blog']  
+          %}{% if blog != empty %}{% for article in blog.articles limit: 4 %}<div class="f:column">{% render 'foxify-article-card', article: article, blog: blog, card_style: 'inherit', image_ratio: '1:1', text_align: 'inherit' %}</div>{% endfor %}{% else %}{% for i in (1..4) %}<div class="f:column">{% render 'foxify-article-card', onboarding: true %}</div>{% endfor %}{% endif %}</div></div></div></div>
+{% liquid
+        assign theme_settings = shop.metafields.foxify.theme_settings.value
+        assign customCodeBody = theme_settings.customCodeBody
+        echo customCodeBody
+      %}
+
+</div>
+    {% schema %}
+        {
+            "name": "Foxify main content",
+            "class": "foxify-main f-app",
+            "settings": [
+                {
+                "type": "header",
+                "content": "Customize section",
+                "info": "Go to [Foxify app](https://app.foxify.io/editor?id=1733738310qlvwt&type=ARTICLE) to edit this section."
+                }
+            ],
+            "locales": {
+  "en": {
+    "f-richtext-1733738235PcteP-text_html": "<ul>\n<li>Ispirazione e idee</li>\n<li>Fashion tips</li>\n<li>Jul 31, 2023</li>\n</ul>",
+    "f-richtext-1733738235wByvW-text_html": "{{ f_richtext_1733738235wByvW_text }}",
+    "f-heading-1733738235tusTD-text_html": "Indice",
+    "f-richtext-1733738235lThOl-text_html": "<ul style=\"margin: 0;\">\n<li>Minimalismo moderno</li>\n<li>Classico bordeaux</li>\n<li>Effetto marmo</li>\n<li>Scale di colori</li>\n<li>Stile romantico</li>\n<li>Foglie d'autunno</li>\n<li>Voglia di verde</li>\n</ul>",
+    "f-richtext-1733738235xSoQ1-text_html": "<p>Trovare l’ispirazione giusta per una manicure originale e al passo con i nuovi trend può essere una vera sfida. Anche se ami il lavoro di ricerca, sappiamo che richiede tempo… e che spesso il tempo ti manca!</p>",
+    "f-richtext-1733738235LQk1y-text_html": "<p>Ecco perché noi di Cactus For You abbiamo deciso di darti una mano, raccogliendo per te le migliori idee per unghie autunnali particolari.</p>",
+    "f-richtext-1733738235BexPh-text_html": "<p>E non finisce qui: per ogni tema, ti proponiamo tre inspo per unghie autunnali gel o semipermanente. Se vuoi affidarti a Cactus For You, clicca sulle foto e scopri i nostri smalti autunno nei colori perfetti per ottenere unghie impeccabili e alla moda. Allora, iniziamo?</p>",
+    "f-heading-1733738235FmX9n-text_html": "Classico bordeaux",
+    "f-richtext-1733738235WoKnq-text_html": "<p>Il bordeaux si conferma protagonista delle tendenze unghie per la stagione autunnale. Questa tonalità, in tutte le sue sfumature, si adatta a ogni incarnato e si abbina con facilità a qualsiasi outfit.</p>",
+    "f-heading-1733738235ZJpuT-text_html": "Effetto marmo",
+    "f-richtext-1733738235KxAPb-text_html": "<p>Le Marble Nails, come suggerisce il nome, richiamano nelle forme e nei colori le venature del marmo, regalando profondità a qualsiasi tonalità. E per dare un tocco di luce alle unghie, ti basta aggiungere dettagli oro e argento.</p>",
+    "f-richtext-1733738235pFqYa-text_html": "<p>Realizzare queste idee manicure è davvero semplice, e puoi farlo con i prodotti che preferisci.<br><br>Grazie per aver letto fino a qui. Se il nostro articolo sulle tendenze unghie autunno ti è piaciuto, continua a seguirci. Ci sono tante altre ispirazioni in arrivo!</p>",
+    "f-heading-1733738235GMFEl-text_html": "Related Articles",
+    "f-heading-1733738599PWtFC-text_html": "Minimalismo moderno",
+    "f-richtext-1733738591pkpI4-text_html": "<p>È il momento perfetto per sfoggiare disegni unghie autunnali minimalisti. Linee sottili, piccoli cerchi e altre forme risaltano su una base naturale, oppure su sfondi a contrasto, per un effetto ultra moderno.</p>",
+    "f-heading-17337401814Zu1D-text_html": "Scale di colori",
+    "f-richtext-1733740181wp2pe-text_html": "<p>Le tonalità autunnali sono perfette per creare scale cromatiche che trasformano anche le più semplici delle manicure in vere e proprie icone di stile. Se desideri sperimentare, senza osare con nail art troppo audaci, queste serie colorate rappresentano il giusto equilibrio tra creatività e raffinatezza.</p>",
+    "f-heading-1733740206R4In4-text_html": "Stile romantico",
+    "f-richtext-173374020690WCI-text_html": "<p>I cuoricini sono la scelta migliore per aggiungere un tocco romantico a ogni unghia. Di seguito trovi tre inspo per te, dalla più particolare alla più classica.</p>",
+    "f-heading-1733740237Z7LKw-text_html": "Foglie d'autunno",
+    "f-richtext-1733740237XOpm0-text_html": "<p>La natura è una grande fonte d’ispirazione per ogni nail artist, soprattutto in questa stagione. Le foglioline stilizzate si sposano alla perfezione con smalti semipermanenti in colori autunnali, come marroni e bordeaux, e con basi dai colori neutri.</p>",
+    "f-heading-1733740261NCBa7-text_html": "Voglia di verde",
+    "f-richtext-1733740261VrsrN-text_html": "<p>Perfetto per manicure monocolore o per nail art fantasiose, il verde è uno dei protagonisti delle tendenze nail autunnali. Ecco alcune proposte che potrai ricreare su unghie di diverse forme e lunghezze.</p>",
+    "f-richtext-17337454040Hzb7-text_html": "<p>Ispirazione e idee</p>",
+    "f-heading-1733745404WoYeg-text_html": "Nail autunnali 2024: idee e ispirazione"
+  },
+  "it": {
+    "f-richtext-1733738235PcteP-text_html": "<ul>\n<li>Ispirazione e idee</li>\n<li>Fashion tips</li>\n<li>Jul 31, 2023</li>\n</ul>",
+    "f-richtext-1733738235wByvW-text_html": "{{ f_richtext_1733738235wByvW_text }}",
+    "f-heading-1733738235tusTD-text_html": "Indice",
+    "f-richtext-1733738235lThOl-text_html": "<ul style=\"margin: 0;\">\n<li>Minimalismo moderno</li>\n<li>Classico bordeaux</li>\n<li>Effetto marmo</li>\n<li>Scale di colori</li>\n<li>Stile romantico</li>\n<li>Foglie d'autunno</li>\n<li>Voglia di verde</li>\n</ul>",
+    "f-richtext-1733738235xSoQ1-text_html": "<p>Trovare l’ispirazione giusta per una manicure originale e al passo con i nuovi trend può essere una vera sfida. Anche se ami il lavoro di ricerca, sappiamo che richiede tempo… e che spesso il tempo ti manca!</p>",
+    "f-richtext-1733738235LQk1y-text_html": "<p>Ecco perché noi di Cactus For You abbiamo deciso di darti una mano, raccogliendo per te le migliori idee per unghie autunnali particolari.</p>",
+    "f-richtext-1733738235BexPh-text_html": "<p>E non finisce qui: per ogni tema, ti proponiamo tre inspo per unghie autunnali gel o semipermanente. Se vuoi affidarti a Cactus For You, clicca sulle foto e scopri i nostri smalti autunno nei colori perfetti per ottenere unghie impeccabili e alla moda. Allora, iniziamo?</p>",
+    "f-heading-1733738235FmX9n-text_html": "Classico bordeaux",
+    "f-richtext-1733738235WoKnq-text_html": "<p>Il bordeaux si conferma protagonista delle tendenze unghie per la stagione autunnale. Questa tonalità, in tutte le sue sfumature, si adatta a ogni incarnato e si abbina con facilità a qualsiasi outfit.</p>",
+    "f-heading-1733738235ZJpuT-text_html": "Effetto marmo",
+    "f-richtext-1733738235KxAPb-text_html": "<p>Le Marble Nails, come suggerisce il nome, richiamano nelle forme e nei colori le venature del marmo, regalando profondità a qualsiasi tonalità. E per dare un tocco di luce alle unghie, ti basta aggiungere dettagli oro e argento.</p>",
+    "f-richtext-1733738235pFqYa-text_html": "<p>Realizzare queste idee manicure è davvero semplice, e puoi farlo con i prodotti che preferisci.<br><br>Grazie per aver letto fino a qui. Se il nostro articolo sulle tendenze unghie autunno ti è piaciuto, continua a seguirci. Ci sono tante altre ispirazioni in arrivo!</p>",
+    "f-heading-1733738235GMFEl-text_html": "Related Articles",
+    "f-heading-1733738599PWtFC-text_html": "Minimalismo moderno",
+    "f-richtext-1733738591pkpI4-text_html": "<p>È il momento perfetto per sfoggiare disegni unghie autunnali minimalisti. Linee sottili, piccoli cerchi e altre forme risaltano su una base naturale, oppure su sfondi a contrasto, per un effetto ultra moderno.</p>",
+    "f-heading-17337401814Zu1D-text_html": "Scale di colori",
+    "f-richtext-1733740181wp2pe-text_html": "<p>Le tonalità autunnali sono perfette per creare scale cromatiche che trasformano anche le più semplici delle manicure in vere e proprie icone di stile. Se desideri sperimentare, senza osare con nail art troppo audaci, queste serie colorate rappresentano il giusto equilibrio tra creatività e raffinatezza.</p>",
+    "f-heading-1733740206R4In4-text_html": "Stile romantico",
+    "f-richtext-173374020690WCI-text_html": "<p>I cuoricini sono la scelta migliore per aggiungere un tocco romantico a ogni unghia. Di seguito trovi tre inspo per te, dalla più particolare alla più classica.</p>",
+    "f-heading-1733740237Z7LKw-text_html": "Foglie d'autunno",
+    "f-richtext-1733740237XOpm0-text_html": "<p>La natura è una grande fonte d’ispirazione per ogni nail artist, soprattutto in questa stagione. Le foglioline stilizzate si sposano alla perfezione con smalti semipermanenti in colori autunnali, come marroni e bordeaux, e con basi dai colori neutri.</p>",
+    "f-heading-1733740261NCBa7-text_html": "Voglia di verde",
+    "f-richtext-1733740261VrsrN-text_html": "<p>Perfetto per manicure monocolore o per nail art fantasiose, il verde è uno dei protagonisti delle tendenze nail autunnali. Ecco alcune proposte che potrai ricreare su unghie di diverse forme e lunghezze.</p>",
+    "f-richtext-17337454040Hzb7-text_html": "<p>Ispirazione e idee</p>",
+    "f-heading-1733745404WoYeg-text_html": "Nail autunnali 2024: idee e ispirazione"
+  }
+}
+        }
+    {% endschema %}
+  

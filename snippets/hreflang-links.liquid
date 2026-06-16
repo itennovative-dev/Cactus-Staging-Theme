@@ -1,0 +1,14 @@
+{%- comment -%} Loop su tutte le lingue disponibili (ISO 639-1) {%- endcomment -%}
+{%- assign langs = localization.available_languages -%}
+{%- for lang in langs -%}
+  <link
+    rel="alternate"
+    href="{{ shop.url }}{%- unless lang.iso_code == shop.primary_locale -%}/{{ lang.iso_code }}{%- endunless -%}{{ request.path }}"
+    hreflang="{{ lang.iso_code }}" />
+{%- endfor -%}
+
+{%- comment -%} Fallback x-default {%- endcomment -%}
+<link
+  rel="alternate"
+  href="{{ shop.url }}{{ request.path }}"
+  hreflang="x-default" />
