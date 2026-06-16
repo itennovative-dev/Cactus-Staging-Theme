@@ -28,3 +28,8 @@
 
 /* ponytail: cactus card v6 - info below image too (no overlay, no overlap) */
 .product-card__info{position:static!important;inset:auto!important;bottom:auto!important;padding:14px 0 0!important}
+
+/* ponytail: cactus card v7 - info overlay on photo, button below */
+.product-card__image-wrapper{position:relative}
+.product-card__info{position:absolute!important;left:0;right:0;bottom:0;padding:14px 18px!important;z-index:3}
+.product-card__static-actions{position:static!important;inset:auto!important;padding:14px 18px 0!important;margin:0!important;width:100%}

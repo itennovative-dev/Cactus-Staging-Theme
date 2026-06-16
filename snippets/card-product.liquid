@@ -237,7 +237,6 @@ class="product-card__wrapper h-full limoniapps-discountninja-collectionbadge">
           </svg>
         </button>
       {%- endif -%}
-    </div>
     <div class="product-card__info text-{{ settings.pcard_content_alignment }}">
       {%- if show_vendor -%}
         <p class="product-card__vendor text-sm m-0">
@@ -261,6 +260,7 @@ class="product-card__wrapper h-full limoniapps-discountninja-collectionbadge">
       {%- if show_color_swatches -%}
         {%- render 'pcard-color-swatch', product: product -%}
       {%- endif -%}
+    </div>
     </div>
     {%- if enable_quick_add -%}
       {%- liquid
