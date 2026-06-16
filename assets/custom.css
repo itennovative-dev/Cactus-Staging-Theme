@@ -9,3 +9,9 @@
 .product-card__title-row .f-price{margin:0;white-space:nowrap}
 .product-card__static-actions{position:static!important;opacity:1!important;visibility:visible!important;transform:none!important;margin-top:14px;width:100%;inset:auto}
 .product-card__static-actions .product-card__atc{width:100%;border-radius:999px;border:1px solid currentColor;background:transparent;color:#1a1a1a;text-transform:uppercase;letter-spacing:.06em;min-height:48px;display:flex;align-items:center;justify-content:center}
+
+/* ponytail: cactus card v2 - all content overlaid on the photo */
+.product-card__wrapper{position:relative}
+.product-card__image-wrapper{height:100%}
+.product-card__info{position:absolute;left:0;right:0;bottom:74px;padding:0 24px;z-index:3;text-align:left;margin:0}
+.product-card__static-actions{position:absolute!important;left:0;right:0;bottom:18px;padding:0 24px;margin-top:0!important;width:auto}
