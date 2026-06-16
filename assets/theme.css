@@ -114,5 +114,8 @@
     font-size:17px!important;
 }
 .product-card__title-row {
-    align-items: end;
+    align-items: end!important;
+}
+.product-card__wishlist {
+    width: 36px!important;
 }
