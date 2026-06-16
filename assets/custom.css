@@ -14,7 +14,7 @@
 /* info: normal flow below the image */
 .product-card__info{position:absolute;bottom:62px;left:0;right:0;z-index:2;text-align:left;margin:0;padding:0 8px}
 .product-card__type{text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-bottom:2px;font-size:13px}
-.product-card__brand{font-weight:300;letter-spacing:.12em;text-transform:uppercase;opacity:.6;font-size:12px;margin-bottom:2px}
+.product-card__brand{font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:#1a1a1a;opacity:.85;font-size:12px;line-height:1.2;margin:0 0 2px;display:block}
 .product-card__title-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .product-card__title-row .product-card__title{margin:0;font-weight:700;font-size:16px}
 .product-card__title-row .f-price{margin:0;white-space:nowrap;font-weight:500}
