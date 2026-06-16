@@ -122,3 +122,8 @@
 .product-card__badge .f-badge {
     margin-top: 5px;
 }
+@media (max-width: 767.98px) {
+    .product-card__action-text {
+
+max-width: 100%!important;
+    }}
