@@ -101,3 +101,8 @@
         padding-left:0px!important;
                 font-weight: 600;
     }
+
+    .product-card__title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
