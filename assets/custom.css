@@ -12,7 +12,7 @@
 .product-card__wishlist{position:absolute;top:0;right:0;z-index:2;background:none;border:0;padding:4px;color:#1a1a1a;cursor:pointer;line-height:0}
 
 /* info: normal flow below the image */
-.product-card__info{position:static;text-align:left;margin:0;padding:0 4px 12px}
+.product-card__info{position:absolute;top:52px;left:0;right:0;z-index:2;text-align:left;margin:0;padding:0 8px}
 .product-card__type{text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-bottom:2px;font-size:13px}
 .product-card__title-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .product-card__title-row .product-card__title{margin:0;font-weight:700;font-size:22px}
