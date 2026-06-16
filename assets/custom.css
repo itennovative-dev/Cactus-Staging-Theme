@@ -1,1 +1,11 @@
 @media(min-width:767px){#shopify-section-template--24126827364735__video_with_text_gjJMkD .page-width{padding-inline:0}}div#quick-quote-wrapper{margin-top:50px;margin-bottom:50px}1#qq-header{margin-bottom:20px}@media only screen and (max-width:900px){#pnl-request-quote-wrapper{flex-direction:column-reverse;gap:30px}}button#submit-quote{border:1px solid}button#back-to-cart{border:1px solid}div#shopify-block-AMjViZy84K1BSQm45O__quick_quote_quote_button_3J48Ef{border-radius:30px;background:#f9f8f2;border:1px solid;text-align:center;height:44px;display:flex;align-items:center}div#shopify-block-AMjViZy84K1BSQm45O__quick_quote_quote_button_3J48Ef a{width:200px!important;margin:0 auto}
+/* ponytail: cactus product card layout */
+.product-card__badge{position:absolute;top:12px;left:12px;z-index:2;display:flex;gap:6px}
+.product-card__badge .f-badge{background:transparent;border:1px solid currentColor;color:#1a1a1a;border-radius:999px;padding:6px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.product-card__wishlist{position:absolute;top:12px;right:12px;z-index:2;background:none;border:0;padding:4px;color:#1a1a1a;cursor:pointer;line-height:0}
+.product-card__type{text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-bottom:2px}
+.product-card__title-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.product-card__title-row .product-card__title{margin:0;font-weight:700}
+.product-card__title-row .f-price{margin:0;white-space:nowrap}
+.product-card__static-actions{position:static!important;opacity:1!important;visibility:visible!important;transform:none!important;margin-top:14px;width:100%;inset:auto}
+.product-card__static-actions .product-card__atc{width:100%;border-radius:999px;border:1px solid currentColor;background:transparent;color:#1a1a1a;text-transform:uppercase;letter-spacing:.06em;min-height:48px;display:flex;align-items:center;justify-content:center}
