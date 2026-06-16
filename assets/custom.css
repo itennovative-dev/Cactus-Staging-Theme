@@ -1,35 +1,24 @@
 @media(min-width:767px){#shopify-section-template--24126827364735__video_with_text_gjJMkD .page-width{padding-inline:0}}div#quick-quote-wrapper{margin-top:50px;margin-bottom:50px}1#qq-header{margin-bottom:20px}@media only screen and (max-width:900px){#pnl-request-quote-wrapper{flex-direction:column-reverse;gap:30px}}button#submit-quote{border:1px solid}button#back-to-cart{border:1px solid}div#shopify-block-AMjViZy84K1BSQm45O__quick_quote_quote_button_3J48Ef{border-radius:30px;background:#f9f8f2;border:1px solid;text-align:center;height:44px;display:flex;align-items:center}div#shopify-block-AMjViZy84K1BSQm45O__quick_quote_quote_button_3J48Ef a{width:200px!important;margin:0 auto}
-/* ponytail: cactus product card layout */
-.product-card__badge{position:absolute;top:12px;left:12px;z-index:2;display:flex;gap:6px}
-.product-card__badge .f-badge{background:transparent;border:1px solid currentColor;color:#1a1a1a;border-radius:999px;padding:6px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
-.product-card__wishlist{position:absolute;top:12px;right:12px;z-index:2;background:none;border:0;padding:4px;color:#1a1a1a;cursor:pointer;line-height:0}
-.product-card__type{text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-bottom:2px}
-.product-card__title-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.product-card__title-row .product-card__title{margin:0;font-weight:700}
-.product-card__title-row .f-price{margin:0;white-space:nowrap}
-.product-card__static-actions{position:static!important;opacity:1!important;visibility:visible!important;transform:none!important;margin-top:14px;width:100%;inset:auto}
-.product-card__static-actions .product-card__atc{width:100%;border-radius:999px;border:1px solid currentColor;background:transparent;color:#1a1a1a;text-transform:uppercase;letter-spacing:.06em;min-height:48px;display:flex;align-items:center;justify-content:center}
+/* cactus product card — matches reference screenshot */
+.product-card{background:#f5f3ee;border-radius:24px;padding:18px 18px 22px;overflow:hidden}
+.product-card__wrapper{position:relative;display:flex;flex-direction:column}
 
-/* ponytail: cactus card v2 - all content overlaid on the photo */
-.product-card__wrapper{position:relative}
-.product-card__image-wrapper{height:100%}
-.product-card__info{position:absolute;left:0;right:0;bottom:74px;padding:0 24px;z-index:3;text-align:left;margin:0}
-.product-card__static-actions{position:absolute!important;left:0;right:0;bottom:18px;padding:0 24px;margin-top:0!important;width:auto}
-
-/* ponytail: cactus card v3 - info flush to bottom */
-.product-card__info{bottom:0!important;padding-bottom:74px}
-
-/* ponytail: cactus card v4 - actions always visible, no info padding-bottom */
-@media (min-width:768px){.product-card:not(.product-card--list) .product-card__actions .btn{opacity:1}}
-.product-card__info{padding-bottom:0!important}
-
-/* ponytail: cactus card v5 - ATC button below image (normal flow) */
-.product-card__static-actions{position:static!important;inset:auto!important;left:auto!important;right:auto!important;bottom:auto!important;padding:14px 0 0!important;margin-top:0!important;width:100%}
-
-/* ponytail: cactus card v6 - info below image too (no overlay, no overlap) */
-.product-card__info{position:static!important;inset:auto!important;bottom:auto!important;padding:14px 0 0!important}
-
-/* ponytail: cactus card v7 - info overlay on photo, button below */
+/* image: centered, transparent, badges+heart float on top */
 .product-card__image-wrapper{position:relative}
-.product-card__info{position:absolute!important;left:0;right:0;bottom:0;padding:14px 18px!important;z-index:3}
-.product-card__static-actions{position:static!important;inset:auto!important;padding:14px 18px 0!important;margin:0!important;width:100%}
+.product-card__image-wrapper,.product-card__image-wrapper .media-wrapper{background:transparent}
+
+.product-card__badge{position:absolute;top:0;left:0;z-index:2;display:flex;gap:6px}
+.product-card__badge .f-badge{background:transparent;border:1px solid #1a1a1a;color:#1a1a1a;border-radius:999px;padding:6px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.product-card__wishlist{position:absolute;top:0;right:0;z-index:2;background:none;border:0;padding:4px;color:#1a1a1a;cursor:pointer;line-height:0}
+
+/* info: normal flow below the image */
+.product-card__info{position:static;text-align:left;margin:0;padding:16px 4px 0}
+.product-card__type{text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-bottom:2px;font-size:13px}
+.product-card__title-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.product-card__title-row .product-card__title{margin:0;font-weight:700;font-size:22px}
+.product-card__title-row .f-price{margin:0;white-space:nowrap;font-weight:500}
+
+/* full-width outlined pill ATC, always visible, below info */
+.product-card__static-actions{position:static!important;inset:auto!important;opacity:1!important;visibility:visible!important;transform:none!important;width:100%;margin:14px 0 0!important;padding:0 4px!important}
+.product-card__static-actions .product-card__atc{width:100%;border-radius:999px;border:1px solid #1a1a1a;background:transparent;color:#1a1a1a;text-transform:uppercase;letter-spacing:.06em;min-height:48px;display:flex;align-items:center;justify-content:center}
+@media (min-width:768px){.product-card:not(.product-card--list) .product-card__actions .btn{opacity:1}}
