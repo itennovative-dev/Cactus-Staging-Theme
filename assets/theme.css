@@ -119,3 +119,6 @@
 .product-card__wishlist {
     width: 36px!important;
 }
+.product-card__badge .f-badge {
+    margin-top: 5px;
+}
