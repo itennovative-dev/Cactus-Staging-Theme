@@ -109,6 +109,30 @@ data-limoniapps-discountninja-product-pricemin="{{ product.price_min}}"
 data-limoniapps-discountninja-product-tags="{{ product.tags | join: ',' | escape | default: '[[--NONE--]]' }}"
   
 class="product-card__wrapper h-full limoniapps-discountninja-collectionbadge">
+    <div class="product-card__info text-{{ settings.pcard_content_alignment }}">
+      {%- if show_vendor -%}
+        <p class="product-card__vendor text-sm m-0">
+          <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+          {{ product.vendor }}
+        </p>
+      {%- endif -%}
+      {%- if show_type -%}
+        <p class="product-card__type text-sm m-0">
+          <span class="visually-hidden">{{ 'accessibility.product_type' | t }}</span>
+          {{ product.type }}
+        </p>
+      {%- endif -%}
+      {%- comment -%} title + price on one row, above the product image {%- endcomment -%}
+      <div class="product-card__title-row">
+        <h3 class="product-card__title text-pcard-title">
+          <a class="reversed-link" href="{{ product.url }}">{{- product.title -}}</a>
+        </h3>
+        <span class="limoniapps-discountninja-productprice"> {% render 'price', product: product, alignment: settings.pcard_content_alignment %}</span>
+      </div>
+      {%- if show_color_swatches -%}
+        {%- render 'pcard-color-swatch', product: product -%}
+      {%- endif -%}
+    </div>
     <div class="product-card__image-wrapper{% if second_image == blank %} product-card__image-wrapper--main-only{% endif %} {% if list_on_mobile %}desktop-{% endif %}color-{{ settings.pcard_overlay_color_scheme }} bg-none">
       <a href="{{ product.url }}" aria-label="{{ product.title | escape }}" tabindex="-1">
         <motion-element data-motion="zoom-out-sm" class="block">
@@ -237,30 +261,6 @@ class="product-card__wrapper h-full limoniapps-discountninja-collectionbadge">
           </svg>
         </button>
       {%- endif -%}
-    <div class="product-card__info text-{{ settings.pcard_content_alignment }}">
-      {%- if show_vendor -%}
-        <p class="product-card__vendor text-sm m-0">
-          <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-          {{ product.vendor }}
-        </p>
-      {%- endif -%}
-      {%- if show_type -%}
-        <p class="product-card__type text-sm m-0">
-          <span class="visually-hidden">{{ 'accessibility.product_type' | t }}</span>
-          {{ product.type }}
-        </p>
-      {%- endif -%}
-      {%- comment -%} ponytail: title + price on one row to match cactus card {%- endcomment -%}
-      <div class="product-card__title-row">
-        <h3 class="product-card__title text-pcard-title">
-          <a class="reversed-link" href="{{ product.url }}">{{- product.title -}}</a>
-        </h3>
-        <span class="limoniapps-discountninja-productprice"> {% render 'price', product: product, alignment: settings.pcard_content_alignment %}</span>
-      </div>
-      {%- if show_color_swatches -%}
-        {%- render 'pcard-color-swatch', product: product -%}
-      {%- endif -%}
-    </div>
     </div>
     {%- if enable_quick_add -%}
       {%- liquid
