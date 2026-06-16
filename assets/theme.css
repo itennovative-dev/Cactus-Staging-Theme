@@ -129,4 +129,6 @@ max-width: 100%!important;
 width: 100%!important;
     }}
 
-    
+    .product-card__image-wrapper .product-card__quickview {
+        display: none !important;
+    }
