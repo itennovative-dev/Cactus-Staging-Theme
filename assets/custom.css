@@ -15,3 +15,6 @@
 .product-card__image-wrapper{height:100%}
 .product-card__info{position:absolute;left:0;right:0;bottom:74px;padding:0 24px;z-index:3;text-align:left;margin:0}
 .product-card__static-actions{position:absolute!important;left:0;right:0;bottom:18px;padding:0 24px;margin-top:0!important;width:auto}
+
+/* ponytail: cactus card v3 - info flush to bottom */
+.product-card__info{bottom:0!important;padding-bottom:74px}
