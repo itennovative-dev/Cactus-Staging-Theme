@@ -22,3 +22,6 @@
 /* ponytail: cactus card v4 - actions always visible, no info padding-bottom */
 @media (min-width:768px){.product-card:not(.product-card--list) .product-card__actions .btn{opacity:1}}
 .product-card__info{padding-bottom:0!important}
+
+/* ponytail: cactus card v5 - ATC button below image (normal flow) */
+.product-card__static-actions{position:static!important;inset:auto!important;left:auto!important;right:auto!important;bottom:auto!important;padding:14px 0 0!important;margin-top:0!important;width:100%}
